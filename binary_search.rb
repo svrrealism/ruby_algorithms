@@ -31,3 +31,9 @@ end
 array1 = [1,2,3,4,5,6,7,8,9,10,11]
 
 puts binary_search(array1, 9)
+
+puts """
+  Simple Search / Linear Search
+  Binary search
+
+"""
