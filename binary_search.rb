@@ -34,6 +34,11 @@ puts binary_search(array1, 9)
 
 puts """
   Simple Search / Linear Search
+    - Has a best case of O(1)
+    - Has a worst case of O(n)
+
   Binary search
+    - Has a best case of O(1)
+    - Has a worst case of O(log n)
 
 """
