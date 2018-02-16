@@ -8,9 +8,10 @@ Movie theater analogy:
   - All of your friends need seats so that you are all sitting next to each other.
   - The moment a new friend comes along, you need an entire new set of seats to accommodate
   - Seats are analogous to memory
-  - Movie Theater Seats : n-Friends :: Address in memory : Array
+  - Movie Theater Seats is to n-Friends as Address in memory is to Array
 
   Big-O of an Array
+  -----------------
   - Arrays can be accessed/read with a speed of O(1) as you can just read any random element.
   - Insertion into an array is slower with a speed of O(n)
   - Slow inserts, fast reads.
