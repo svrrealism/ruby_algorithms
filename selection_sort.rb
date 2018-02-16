@@ -1,3 +1,11 @@
+puts "\n"*5
+puts "-"*25
+puts "WARNING: The word index is meant to mean the position in an array. Oki?"
+puts "-"*25
+
+puts "\n"*5
+
+puts "Moving on...."
 puts """
 
 Here we explore linked lists and arrays.
@@ -13,20 +21,39 @@ Movie theater analogy:
   Big-O of an Array
   -----------------
   - Arrays can be accessed/read with a speed of O(1) as you can just read any random element.
+    a). Example: Give me the the contents of arr[some_item]..... 'Oh, arr[some_item] evals to this...'
+
   - Insertion into an array is slower with a speed of O(n)
+    a).
+
   - Slow inserts, fast reads.
 
   Linked-Lists
   ------------
-  - All of your friends don't care about sitting next to each other
+  - All of your friends don't care about sitting next to each other (Your items can be anywhere in memory)
   - But to know where your friends were sitting, you'd have to go to every seat.
   - To determine what the next element is in the linked-list(memory address), it means that
     you read all elements to get and idea of where each are pointing to each other in memory.
 
   Big O of a Linked-List
+  ----------------------
   - Therefore, reading a linked-list has a speed of O(n)
-  - Insertion into a linked-list has a speed of O(1)
-  - Fast inserts, slow reads ONLY IF YOU ARE ACCESSING RANDOM ELEMENTS!!
+
+  - Insertion into a linked-list is SO EASSSSSSSSSY AND FAST!.........has a speed of O(1))
+    a). You're just plugging an item into it and having the
+        last known element point to said inserted element's address!!!!
+
+  - Only slow reads if you are accessing random elements
+    a). For example: you want to access a random element...you go to the beginning of the
+                     linked-list and the first element says:
+                     'Nope not me, but I have the next element...the princess is in another castle.'
+
+    ANALOGY TIME:
+      - Random Access in Linked-Lists : O(n) :: Mario is looking : for the princess in another castle
+
+      If you are going to keep jumping around, then linked lists are TERRRRRRRIBLE!!!
+      Mario would potentially miss out on finding the princess...and that's SAD.
+
 
 
 ----------------------------------------------------------------
