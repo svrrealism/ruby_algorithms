@@ -21,7 +21,7 @@ Movie theater analogy:
   - All of your friends don't care about sitting next to each other
   - But to know where your friends were sitting, you'd have to go to every seat.
   - To determine what the next element is in the linked-list(memory address), it means that
-    you read all elements to get.
+    you read all elements to get and idea of where each are pointing to each other in memory.
 
   Big O of a Linked-List
   - Therefore, reading a linked-list has a speed of O(n)
