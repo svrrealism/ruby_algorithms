@@ -269,10 +269,26 @@ Armed with this knowledge, we can sort things like:
   - User sign ups from oldest to newest
   - Travel Dates
 
-Example:
 
 
+-----------------------------------------------------------------------------------
+Checking Fewer Elements Each Time:
 
+So as we go through the number of operations, the number of elements we have to
+check keeps decreasing. Soon enough, we're down to one element that we have to check.
+How is the runtime still O(n^2)??
+ -> We check n elements, then n-1, n-2, n-3, ... 2, 1
+ -> On average, we check a list having 1/2 x n elements.
+    Therefore, the runtime is O(n x 1/2 x n)...constants are ignored so just:
+
+->    O(n^2)
+-----------------------------------------------------------------------------------
+
+While Selection Sort is awesome, O(n^2) is not fast
+Contrast this to Quicksort, O(n log n)
+
+
+Code for Selection Sort (Doesn't follow the steps in METHOD 1 verbatim):
 
 
 

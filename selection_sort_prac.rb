@@ -1,40 +1,42 @@
 #get our datasets
 require './data_sets'
 
-puts '-'*65 + '\n'
+puts '-'*15
 puts "SELECTION SORT"
-puts '\n' + '-'*65 + '\n\n'
+puts '-'*15
+puts "\n\n"
 
-# def selection_sort(linked_list)
-#   descending_popularity = []
-#   all_items = linked_list.to_a
+#This works
+def find_smallest(arr)
+  #stores the smallest value
+  smallest = arr[0]
+  #stores the INDEX of the smallest value
+  smallest_index = 0
+
+  for i in 1...arr.size
+    if arr[i] < smallest
+      smallest = arr[i]
+      smallest_index = i
+    end
+  end
+
+  return smallest_index
+end
+puts find_smallest([5,3,6,2,10])
+
+# def selection_sort(arr)
+#   new_arr = []
+#   puts "Before", arr
 #
-#   first = all_items[0][1]
+#   # for i in 1...arr.size
+#   #   smallest = find_smallest(arr)
+#   #   new_arr.push(arr.pop(smallest))
+#   # end
+#   puts "N-1", arr, find_smallest(arr)
+#   puts "N-2", arr, find_smallest(arr)
+#   puts "The rest", arr
 #
-#
-#
-#
-#
-#   end
-#
-#
-#
-#
+#   return new_arr
 # end
 #
-#
-# #Say we have a linked-list of products from a database query in graphql
-# #showing me how many times a product was purchased.
-# products_popularity = {
-#   'Extending Puppet' => 23,
-#   'Hello Kitty Calendar' => 8,
-#   'Bluetooth car speaker' => 289,
-#   'Air Freshner' => 56
-# }
-#
-# puts "The products from most popular to least are: "
-#
-# #Could use a button click to show something like:
-# selection_sort(products_popularity).each {|product| puts product }
-
-puts "Sort an array from highest to lowest\n\n\n"
+# puts selection_sort([5,3,6,2,10])

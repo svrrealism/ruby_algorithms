@@ -31,5 +31,6 @@ SORTED_S = [
 ]
 
 #Note that calling shuffle! with the exclamation will change the original var contents in place, above
+UN = [22,34,13,42,3,32,4,1,40]
 UNSORTED_I = SORTED_I.shuffle
 UNSORTED_S = SORTED_S.shuffle
