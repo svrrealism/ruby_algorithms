@@ -16,7 +16,8 @@ Movie theater analogy:
   - All of your friends need seats so that you are all sitting next to each other.
   - The moment a new friend comes along, you need an entire new set of seats to accommodate
   - Seats are analogous to memory
-  - Movie Theater Seats is to n-Friends as Address in memory is to Array
+  - Movie Theater Seats : n-Friends :: Address in memory : to Array
+
 
   Big-O of an Array
   -----------------
@@ -24,7 +25,7 @@ Movie theater analogy:
     a). Example: Give me the the contents of arr[some_item]..... 'Oh, arr[some_item] evals to this...'
 
   - Insertion into an array is slower with a speed of O(n)
-    a).
+    a). You have to shift everything down when something new gets added.
 
   - Slow inserts, fast reads.
 
@@ -57,8 +58,19 @@ Movie theater analogy:
 
 
 ----------------------------------------------------------------
+IMPORTANT
 
+Sequential Access - you have to access all elements to get the memory address of a particular element
+  -(Linked-lists can ONLY do sequential access)
+
+Random Access - you can jump around in the data structure (Arrays are good at this)
+----------------------------------------------------------------
+
+
+
+-------------------------------------
 INSERTING INTO THE MIDDLE OF THE LIST
+-------------------------------------
 
 Q. Suppose you wanted your app to work more like a calendar?
 
@@ -80,22 +92,19 @@ A: Again you'd use linked-lists because you can just unlink the references to th
 
 Big O for Deletions in either data structure:
 
-              Arrays         Lists
+              Arrays         Linked-Lists
 
 Reading       O(1)            O(n)
 
 Insertion     O(n)            O(1)
 
-Deletion      O(n)            O(1)
+Deletion      O(n)            O(1) -> ONLY IF YOU CAN ACCESS THAT ELEMENT INSTANTLY. Common practice to keep track of first and last elements
 
-It's important to note that lists are only fast if you can instantaneously access them.
-  - Standard practice to keep track beginning and
-end of the data structure to ensure O(1) read/deletions of those elements.
+It's important to note that linked-lists are only fast if you can instantaneously access them.
+  - Standard practice to keep track of beginning and end of the data structure
+    to ensure O(1) read/deletions of those elements.
 
 Arrays and Lists are used to implement other data structures
-
-
-
 
 
 EXERCISE 2.1:
@@ -104,7 +113,15 @@ Suppose that you are jotting down items and you:
 - take note every day of what you spent and the total you spent on them at the end of the month.
 Q: What is the best data structure to use?
 
-A: Linked-List because you are merely adding to it daily more than you are reading.
+
+
+
+A: Rationalization:
+
+   - Think about it. I am inserting (writing stuff down) everyday.
+   - Then I'm reading ONCE at the end of the month (how fast that read is, is another issue).
+
+   >>>>>>> Linked-List !!!
 
 EXERCISE 2.2
 ------------
@@ -115,9 +132,118 @@ Suppose that you are building a restaurant app to take customer orders
 
 Q: Would you use an array or a linked-list for this queue implementation?
 
-A: Linked-list. Servers are adding orders (insertion), which linked-lists excel at.
+A: Rationalization:
+    - Arrays are O(n+1) insertions in a queue,
+      Chefs deleted from the queue...O(n) in principle (worst case),
+      but O(1) best case if the last element in the array is tokenized and always deleted...
+        ...but then the index has to change...so the shift occurs which is O(n)
+
+    - Linked-List are O(1) at insertions and O(1) at deletions (assuming you can instantly access the list). Just better overall.
 
 
+
+
+>>>>>>> Linked-list!!! Servers are adding orders (insertion), which linked-lists excel at.
+
+
+
+EXERCISE 2.3
+------------
+Suppose that FB keeps a list of users. When users try to login, a search is done for that name.
+People log in quite often, many searches. Say the search is binary search.
+
+Binary Search NEEDS random access, because you need to get to the middle of that list.
+
+Q: Would you use an array or linked-list to store your users?
+
+A: Rationalization:
+
+   - Since binary search is being used, I know that it takes an input that must be sorted. Seems faster to sort an array versus a linked list.
+   - I also know that, since arrays are faster, O(1), at random access than linked-lists, arrays seem ideal.
+
+
+>>>>>>> Arrays!!
+
+
+
+EXERCISE 2.4
+------------
+
+Continuing the example above, people sign up quite often.
+Suppose we decide to use an array to store the list of users.
+
+Q1: What are the drawbacks to using an array for inserts?
+A1: Rationalization:
+      - The downsides are, while you have access to the alphabetic order of the users,
+        you would need to shift the entire array if you did an insert (sign up).
+        This is a problem because what if multiple users are signing up,
+        the array would need to account for more space in memory every single time someone signed up!!!
+
+    >>>>>>> My above rationalization but also, if that element is added to the end
+            and binary search needs order, you need to sort the entire array again. Try logging in...eventually.
+
+Q2: More specific than the above question, supposing that you are using binary search
+    to search for logins, what if you add new users?
+
+A2: Rationalization:
+
+    - Since binary search needs a sorted array, and searches based on knowledge of the
+      first, middle, and last elements of the array, if you are signing users up, the array will constantly shift.
+      If the array is constantly shifting, then it seems like multiple users could not realiably log into their
+      accounts when binary search is predicated on calculating values that rarely shift
+
+EXERCISE 2.5
+------------
+
+So actually FB uses neither linked-lists nor arrays.
+
+Let's suppose an idea of a HYBRID data structure, say, an array of linked-lists.
+
+We have an array with 26 slots. Each slot points to a linked-list.
+
+
+sorted_users_array =
+[
+    a = {Adam ... Annie ... Alice ... Al },
+    b = {Bob ... Blake ... Bilson ... Blaine },
+    c = {Cate ... Caleb ... Carrie ... Carol },
+    ...
+]
+
+Scenario 1:
+  Suppose Annie B signs up and you want to add her to the list?
+    - We go to the first slot in the array and add her to the end of the list.
+
+Scenario 2:
+  We want to find Zachary R.
+    - If we wanted to search for Zachary R. in the last slot, we'd search the list until we found him.
+
+
+
+Let's compare this hybrid data structure to arrays and linked-lists.
+
+
+Q: Is the hybrid slower or faster than each for searching and inserting?
+
+A: Rationalization:
+   - The hybrid as compared to the array:
+      a). Searching (Reading): The hybrid is O(1+n) or O(n) since we can drop constants if there is an n VS. an array's O(1)
+      b). Inserting: The hybrid is O(1+1) or O(2) VS. an array's O(n) shifting elements unless it's at the end
+          * You are comparing the Read+Insert here VS. Insert of array.
+
+   - The hybrid as compared to the linked-list:
+      a). Searching: The hybrid is O(1+n) or O(n) VS. a linked-list's O(n)
+      b). Inserting: The hyrbid is O(1+1) or O(2) VS. a linked-list's O(1)
+
+
+>>>>>>>(WTF) Searching...slower than arrays, faster than linked-lists
+       (this doesn't make sense to me because searching through the list will be inevitable for hybrid plus the constant time)
+>>>>>>> Inserting...faster than arrays, same speed as linked-lists
+
+
+FB probably uses many different databases, with various data structures such as:
+  a). Hash Trees
+  b). B-Trees
 
 
 """

@@ -1,0 +1,12 @@
+Find the second largest number in an array and sort the array.
+Write a Java program to print Fibonacci series upto 100?
+Write a Java program to prevent deadlock in Java ?
+In an array 1-100 exactly one number is duplicate how do you find it?
+Calculate Factorial of a number
+How do you sort Java object using Comparator?
+Print out all leaf node of a binary tree?
+Difference between linked list and array data structure?
+How do you find middle element of a linked list in single pass?
+Print all permutation of String both iterative and Recursive way?
+Write a function to find out longest palindrome in a given string
+How to check if two String are Anagram?
