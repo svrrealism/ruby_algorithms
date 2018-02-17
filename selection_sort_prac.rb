@@ -6,7 +6,7 @@ puts "SELECTION SORT"
 puts '-'*15
 puts "\n\n"
 
-#This works
+#This r
 def find_smallest(arr)
   #stores the smallest value
   smallest = arr[0]
@@ -20,9 +20,9 @@ def find_smallest(arr)
     end
   end
 
+  #returns the INDEX of the smallest number found in any given array.
   return smallest_index
 end
-puts find_smallest([5,3,6,2,10])
 
 # def selection_sort(arr)
 #   new_arr = []
