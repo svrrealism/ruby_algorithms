@@ -246,4 +246,37 @@ FB probably uses many different databases, with various data structures such as:
   b). B-Trees
 
 
+--------------------------------------------------------------------------------------------------------------------------------
+Algorithm: Selection Sort
+
+Scenario: You have a table of products and the amount of time the product was purchased.
+Problem: You would like to sort the products from most to least so that you focus more on the popular items. How would you do this?
+
+METHOD 1: One way is to go through the list and find the the most played artist. Add the artist to a new list. Do it again and again till sorted.
+
+So recall that O(n), means that you touch every element once.
+
+This means, we go through the list checking what's the highest number in that list.
+  - Then popping it out of the stack, adding it to a new one each time.
+
+Remember that this list is not sorted initially, so you have to do this n times.
+
+NEW CONCEPT....this takes O(n) x O(n) = O(n^2)
+
+Armed with this knowledge, we can sort things like:
+  - Names in a phone book
+  - Emails from newest to oldest
+  - User sign ups from oldest to newest
+  - Travel Dates
+
+Example:
+
+
+
+
+
+
+
+
+
 """
