@@ -290,9 +290,32 @@ Contrast this to Quicksort, O(n log n)
 
 Code for Selection Sort (Doesn't follow the steps in METHOD 1 verbatim):
 
+Look in selection_sort_prac.rb
+
+The short of it is that there are two parts:
+
+Finding the index of the smallest number,
+Then using this index to delete from a supplied array
+This will cause the array to shrink (n-1) and you find the 'new' index of the n-1 'version of the array'
+Then do the same for n-2, and so on....
 
 
+RECAP:
 
+- PC Memory is like a set of drawers
+
+- When storing multiple elements, use an array or list.
+
+- With an array, all elements are next to each other.
+
+- With a list, elements are all over memory where each element contains info about the address space of the next element.
+
+- Arrays allow fast random reads
+
+- Linked-Lists (lists) allow fast insertion and fast deletion (if at the end of the list)
+
+- All elements in the array should be the same type (all ints, all doubles, ans so on.)
+   ...makes no sense for operations to occur otherwise...
 
 
 """
