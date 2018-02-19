@@ -32,7 +32,5 @@ def selection_sort(arr)
   return new_arr
 end
 
-
-
 array = [2,4,1,5,3]
 p selection_sort(array)
