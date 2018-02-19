@@ -27,6 +27,8 @@ def selection_sort(arr)
   sorted_array = []
 
   #we are doing this, the array size of times.
+  #since we are deleting from the array, in effect we are doing this loop,
+  # the amount of times that the array is morphing
   1.upto(arr.size) do |x|
     #THIS IS AN INDEX NOT AN ACTUAL ELEMENT!
     smallest = find_smallest(arr)
@@ -141,7 +143,7 @@ end
 
 #Task: write our known way of doing selection sort and then refactor.
 
-# So far we know that we use two methods to achive this. \
+# So far we know that we use two methods to achive this.
 
 # The final goal is to use only one.
 
