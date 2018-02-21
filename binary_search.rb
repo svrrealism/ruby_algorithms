@@ -5,7 +5,7 @@ def binary_search(arr, item)
   #assign parts of the array by beginning and end
 
   #Envoy of the beginning
-  left = arr[0]
+  left = 0
   #Envoy of the End
   right = arr.length - 1
 

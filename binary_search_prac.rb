@@ -6,7 +6,7 @@ require './data_sets'
 
 #Binary search - returns the sought out item's position in an array
 def binary_search_integers(sorted_array, value)
-  low = sorted_array[0]
+  low = 0
   high = sorted_array.length - 1
 
   while low <= high
@@ -29,7 +29,7 @@ end
 # THIS IS NOT COMPLETE, MUST FINISH
 
 def binary_search_strings(sorted_array, value)
-  low = sorted_array[0]
+  low = 0
   high = sorted_array.length - 1
 
   while low <= high
@@ -57,7 +57,7 @@ p binary_search_integers(SORTED_I, 7)
 #repetition with right and left versa high and low
 # WE ALWAYS WANT TO RETURN THE POSITION THAT THE VALUE SEARCHED FOR IS AT!!!
 def b_s(sorted_arr, value)
-    left = sorted_arr[0]
+    left = 0
     right = sorted_arr.length - 1
 
     while left <= right

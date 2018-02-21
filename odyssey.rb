@@ -2,7 +2,7 @@
 
 
 def binary_search(sorted_array, value)
-  low = sorted_array[0]
+  low = 0
   high = sorted_array.length - 1
 
   while low <= high
@@ -26,7 +26,7 @@ end
 
 
 def b_search(sorted_array, value)
-  left = sorted_array[0]
+  left = 0
   right = sorted_array.length - 1
 
   while left <= right
@@ -50,7 +50,7 @@ end
 
 
 def bin_search(sorted_collection, value)
-  low = sorted_collection[0]
+  low = 0
   high = sorted_collection.length - 1
 
   while low <= high
