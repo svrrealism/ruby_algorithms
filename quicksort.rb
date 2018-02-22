@@ -169,7 +169,9 @@ To recap DC
 
 DC is NOT a simple algo that can be applied to a problem, rather it's a way of thinkng about a problem.
 
-EXAMPLE: Given an array of numbers [2,4,6]
+EXAMPLE: Given an array of numbers
+
+array = [2,4,6]
 
 PROBLEM: Have to add up all of the numbers and give the total.
 
@@ -183,6 +185,17 @@ def add(arr)
   return total
 end
 
+p add(array)
+
+How to do this with a recursive function?
+
+def recursive_add(arr)
+
+  total = arr.delete_at(0)
+  return total += recursive_add(arr)
+
+
+end
 
 
 
