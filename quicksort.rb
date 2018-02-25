@@ -8,7 +8,7 @@ New skill to apply to problems; a recursive technique called:
 
 
 
-First thing we should asked when 'stumped' is...
+First thing we should ask when 'stumped' is...
 
 ---> 'can I use divide and conquer?'
 
